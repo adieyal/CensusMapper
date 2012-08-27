@@ -1,4 +1,4 @@
-# Django settings for censusserver project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
