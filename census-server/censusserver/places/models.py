@@ -12,4 +12,7 @@ class Location(MPTTModel):
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
 
     def __unicode__(self):
-        return "%s (%s)" % (self.name, self.parent)
+        a = self.name
+        if self.parent:
+            return "%s -> %s" % (a, self.parent)
+        return a
