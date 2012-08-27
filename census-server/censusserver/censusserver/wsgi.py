@@ -14,8 +14,16 @@ framework.
 
 """
 import os
+import sys
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "censusserver.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "censusserver.settings_prod")
+
+# activate virtualenv
+activate_this = "/usr/local/webapps/virtualenvs/census/bin/activate_this.py"
+execfile(activate_this, dict(__file__=activate_this))
+
+sys.path.insert(0, "/usr/local/webapps/CensusMapper/census-server/")
+sys.path.insert(0, "/usr/local/webapps/CensusMapper/census-server/censusserver/")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
