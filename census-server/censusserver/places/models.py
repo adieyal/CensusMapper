@@ -6,7 +6,7 @@ LocationTypes = [
 ]
 
 class Location(MPTTModel):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     code = models.CharField(max_length=50, unique=True)
     type = models.CharField(max_length=2, choices=LocationTypes)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
